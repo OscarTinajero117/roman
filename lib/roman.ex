@@ -1,4 +1,10 @@
 defmodule Roman do
+  defmacro __using__(_opts) do
+    quote do
+      import Roman.Numbers
+    end
+  end
+
   def digit(number) do
     cond do
       number >= 1000 ->
